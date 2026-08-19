@@ -5,6 +5,7 @@
   "scripts": {
     "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
+    "start:prod": "serve -s dist/hospital-ui/browser",
     "test": "ng test --watch=false --browsers=ChromeHeadless"
   },
   "dependencies": {
@@ -31,6 +32,7 @@
     "karma-coverage": "^2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "^2.1.0",
+    "serve": "^14.2.4",
     "typescript": "5.9.3"
   }
 }
