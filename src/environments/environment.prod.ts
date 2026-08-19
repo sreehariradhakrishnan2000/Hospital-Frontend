@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://your-backend-service.railway.app/api'
+  // Local testing fallback: http://localhost:8081/api
+  apiBaseUrl: 'https://hospital-backend-production-a243.up.railway.app/api'
 };
