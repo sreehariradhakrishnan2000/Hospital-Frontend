@@ -21,9 +21,14 @@ export interface Appointment {
   providedIn: 'root'
 })
 export class HospitalApiService {
-  private readonly baseUrl = environment.apiBaseUrl;
+  private readonly baseUrl = this.resolveApiBaseUrl();
 
   constructor(private http: HttpClient) {}
+
+  private resolveApiBaseUrl(): string {
+    const runningLocally = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+    return runningLocally ? environment.apiBaseUrl : environment.productionApiBaseUrl;
+  }
 
   getHealth(): Observable<{ status?: string }> {
     return this.http.get<{ status?: string }>(`${this.baseUrl}/health`);
